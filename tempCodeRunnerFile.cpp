@@ -1,24 +1,51 @@
-#include<bits/stdc++.h>
-
+#include <iostream>
+#include <string>
 using namespace std;
 
-int main(){
-    freopen("input.txt","r",stdin);
-    freopen("output.txt","w",stdout);
+string formatText(const string &text) {
+    string result;
+    int n = text.length();
+    int i = 0;
 
-    string s;
-    getline(cin,s);
+    while (i < n) {
+        // Append word characters
+        while (i < n && isalpha(text[i])) {
+            result += text[i++];
+        }
 
-    stringstream ss(s);
+        // If a space exists after the word, add exactly one space
+        if (i < n && text[i] == ' ') {
+            while (i < n && text[i] == ' ') {
+                i++; // Skip multiple spaces
+            }
+            if (i < n && isalpha(text[i])) {
+                result += ' ';
+            }
+        }
 
-    string word;
-    string str;
-
-    while(ss >> word){
-        str += (word + " ");
+        // If punctuation mark found, add it without space before, and add a space after
+        if (i < n && (text[i] == ',' || text[i] == '.' || text[i] == '!' || text[i] == '?')) {
+            result += text[i++];
+            if (i < n && text[i] == ' ') {
+                i++; // Skip existing space
+            }
+            if (i < n && isalpha(text[i])) {
+                result += ' ';
+            }
+        }
     }
 
-    cout<<str;
+    return result;
+}
+
+int main() {
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    string text;
+    getline(cin, text);
+
+    string formattedText = formatText(text);
+    cout << formattedText << endl;
 
     return 0;
 }
