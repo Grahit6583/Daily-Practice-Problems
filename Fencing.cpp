@@ -23,7 +23,6 @@ int main(){
         int cnt = st.size() * 4;
 
         for(auto it : st){
-            // cout<<st.count({it.first-1,it.second})<<"  ";
             if(st.count({it.first-1,it.second})){
                 cnt--;
             }

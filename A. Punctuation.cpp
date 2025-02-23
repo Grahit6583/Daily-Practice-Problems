@@ -18,7 +18,5 @@ int main(){
         str += (word + " ");
     }
 
-    cout<<str;
-
     return 0;
 }
