@@ -1,6 +1,9 @@
 {
-    "C_Cpp.default.compilerPath": "C:/MinGW/bin/gcc.exe",
+    "C_Cpp.default.compilerPath": "C:/mingw64/mingw64/bin/g++.exe",
     "files.associations": {
         "iostream": "cpp"
+    },
+    "code-runner.executorMap": {
+        "cpp": "g++ -std=c++23 \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\""
     }
 }

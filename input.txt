@@ -1,1 +1,5 @@
-galileo galilei was an   italian physicist  ,mathematician,astronomer
+2
+6 2
+1 1 1 2 2 1
+5 3
+1 1 2 2 1
