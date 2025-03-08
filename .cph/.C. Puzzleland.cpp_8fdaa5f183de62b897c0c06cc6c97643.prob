@@ -1,0 +1,1 @@
+{"name":"Local: C","url":"e:\\CodeForces\\C. Puzzleland.cpp","tests":[{"id":1741452004041,"input":"4\n3 1 2 3\n2 2 4","output":"I become the guy."},{"id":1741452021614,"input":"4\n3 1 2 3\n2 2 3","output":"Oh, my keyboard!"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CodeForces\\C. Puzzleland.cpp","group":"local","local":true}

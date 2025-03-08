@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"e:\\CodeForces\\E. 3D model.cpp","tests":[{"id":1741455006005,"input":"3 5 2\n3 1 2\n","output":"4"},{"id":1741455013259,"input":"6 1 4\n5 2 3\n","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CodeForces\\E. 3D model.cpp","group":"local","local":true}
