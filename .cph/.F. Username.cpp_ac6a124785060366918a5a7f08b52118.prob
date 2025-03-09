@@ -1,0 +1,1 @@
+{"name":"Local: F","url":"e:\\CodeForces\\F. Username.cpp","tests":[{"id":1741459501482,"input":"harry potter\n","output":"hap"},{"id":1741459517265,"input":"tom riddle\n","output":"tomr"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CodeForces\\F. Username.cpp","group":"local","local":true}
