@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"e:\\CodeForces\\A. Ambitious Kid.cpp","tests":[{"id":1741802341587,"input":"3\n2 -6 5","output":"2"},{"id":1741802351421,"input":"1\n-3\n","output":"3"},{"id":1741802365204,"input":"5\n0 -1 0 1 0","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CodeForces\\A. Ambitious Kid.cpp","group":"local","local":true}
