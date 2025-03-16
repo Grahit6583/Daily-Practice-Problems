@@ -3,8 +3,8 @@
 using namespace std;
 
 int main(){
-    freopen("input.txt","r",stdin);
-    freopen("output.txt","w",stdout);
+    // freopen("input.txt","r",stdin);
+    // freopen("output.txt","w",stdout);
 
     string s;
     cin>>s;
@@ -13,7 +13,6 @@ int main(){
     bool space = false;
     for(int i=0; i<n; i++){
         if(i+2 < n && s.substr(i,3)== "WUB"){
-
             if(!ans.empty() && space){
                 ans += " ";
             }

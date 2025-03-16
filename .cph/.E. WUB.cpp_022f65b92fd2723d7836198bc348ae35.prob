@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"e:\\CodeForces\\E. WUB.cpp","tests":[{"id":1742145202286,"input":"WUBWUBABCWUB\n","output":"ABC"},{"id":1742145218749,"input":"WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB","output":"WE ARE THE CHAMPIONS MY FRIEND "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\CodeForces\\E. WUB.cpp","group":"local","local":true}
