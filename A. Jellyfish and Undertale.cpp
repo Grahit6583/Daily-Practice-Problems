@@ -13,7 +13,7 @@ int main(){
         int a,b,n;
         cin>>a>>b>>n;
 
-        int maxi =  b;
+        long long maxi =  b;
         for(int i=0; i<n; i++){
             int x;
             cin>>x;
