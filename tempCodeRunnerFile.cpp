@@ -12,23 +12,29 @@ int main(){
     while(t--){
         int n;
         cin>>n;
+
+        int pos = 0;
+        int neg = 0;
         for(int i=0; i<n; i++){
             int x;
             cin>>x;
+
+            if(x > 0){
+                pos++;
+            }
+            else{
+                neg++;
+            }
         }
 
-        if(n%2 == 0){
-            cout<<2<<"\n";
-            cout<<1<<" "<<n<<"\n";
-            cout<<1<<" "<<n<<"\n";
+        int op = 0;
+        while(pos < neg || neg % 2 == 1){
+            op++;
+            pos++;
+            neg--;
         }
-        else{
-            cout<<4<<"\n";
-            cout<<1<<" "<<n-1<<"\n";
-            cout<<1<<" "<<n-1<<"\n";
-            cout<<n-1<<" "<<n<<"\n";
-            cout<<n-1<<" "<<n<<"\n";
-        }
+
+        cout<<op<<"\n";
     }
 
     return 0;

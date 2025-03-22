@@ -27,7 +27,14 @@ int main(){
             }
         }
 
-        if()
+        int op = 0;
+        while(pos < neg || neg % 2 == 1){
+            op++;
+            pos++;
+            neg--;
+        }
+
+        cout<<op<<"\n";
     }
 
     return 0;
