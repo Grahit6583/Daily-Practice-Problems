@@ -10,15 +10,16 @@ int main(){
     cin>>t;
 
     while(t--){
-        long long n;
+        int n;
         cin>>n;
 
-        int i=1;
-        while(n%i == 0){
-            i++;
-        }
+        for(int i=0; i<n; i++){
+            int x;
+            cin>>x;
 
-        cout<<i-1<<"\n";
+            cout<<n-x+1<<" ";
+        }
+        cout<<"\n";
     }
 
     return 0;
