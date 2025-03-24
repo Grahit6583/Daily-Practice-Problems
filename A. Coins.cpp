@@ -10,7 +10,7 @@ int main(){
     cin>>t;
 
     while(t--){
-        int n,k;
+        long long n,k;
         cin>>n>>k;
 
         if((n-k) % 2 == 0){
