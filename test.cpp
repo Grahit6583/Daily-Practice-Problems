@@ -1,38 +1,58 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-// Function to compute steps to reduce a number to zero
-int computeSteps(int x) {
-    int steps = 0;
-    while (x > 0) {
-        x /= 4;  // Floor division by 4
-        steps++;
+int minPartitionCost(vector<int>& cost, int n, int k) {
+    vector<vector<int>> dp(k + 1, vector<int>(n + 1, INT_MAX));
+    
+    // Prefix sum to help with fast range calculations
+    vector<int> prefixSum(n + 1, 0);
+    for (int i = 1; i <= n; i++) 
+        prefixSum[i] = prefixSum[i - 1] + cost[i - 1];
+
+    dp[0][0] = 0; // Base case: 0 cost when no servers and no partitions
+
+    for (int partitions = 1; partitions <= k; partitions++) {
+        for (int j = partitions; j <= n; j++) {
+            for (int i = partitions - 1; i < j; i++) {
+                int partitionCost = cost[i] + cost[j - 1];
+                dp[partitions][j] = min(dp[partitions][j], dp[partitions - 1][i] + partitionCost);
+            }
+        }
     }
-    return steps;
+
+    return dp[k][n];
 }
 
-long long minOperations(vector<vector<int>>& queries) {
-    long long totalSum = 0;
+int maxPartitionCost(vector<int>& cost, int n, int k) {
+    vector<vector<int>> dp(k + 1, vector<int>(n + 1, 0));
 
-    // Process each query
-    for (auto& query : queries) {
-        int l = query[0], r = query[1];
-        long long sum = 0;
-
-        // Compute steps only for the required range
-        for (int i = l; i <= r; i++) {
-            sum += computeSteps(i);
+    for (int partitions = 1; partitions <= k; partitions++) {
+        for (int j = partitions; j <= n; j++) {
+            for (int i = partitions - 1; i < j; i++) {
+                int partitionCost = cost[i] + cost[j - 1];
+                dp[partitions][j] = max(dp[partitions][j], dp[partitions - 1][i] + partitionCost);
+            }
         }
-
-        totalSum += sum;
     }
 
-    return totalSum;
+    return dp[k][n];
+}
+
+vector<int> findPartitionCost(vector<int> cost, int k) {
+    int n = cost.size();
+    return {minPartitionCost(cost, n, k), maxPartitionCost(cost, n, k)};
 }
 
 int main() {
-    vector<vector<int>> queries = {{1, 2}, {2, 4}};
-    cout << minOperations(queries) << endl; // Output: 3
+    int n, k;
+    cin >> n;
+    vector<int> cost(n);
+    for (int i = 0; i < n; i++) 
+        cin >> cost[i];
+    cin >> k;
+    
+    vector<int> result = findPartitionCost(cost, k);
+    cout << result[0] << endl << result[1] << endl;
+    
     return 0;
 }
