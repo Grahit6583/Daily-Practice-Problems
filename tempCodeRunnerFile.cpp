@@ -5,37 +5,25 @@ using namespace std;
 int main(){
     freopen("input.txt","r",stdin);
     freopen("output.txt","w",stdout);
-
-    int t;
+    int t; 
     cin>>t;
 
     while(t--){
         int n;
         cin>>n;
 
-        string s;
-        cin>>s;
-
-        int a = 0;
-        int maxi = 0;
-        int i=0;
-        while(i<n){
-            while(s[i] == '<'){
-                a++;
-                i++;
-            }
-            maxi = max(maxi,a+1);
-            a=0;
-            while(s[i] == '>'){
-                a++;
-                i++;
-            }
-            maxi = max(maxi,a+1);
-            a=0;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin>>arr[i];
         }
 
-        cout<<maxi<<"\n";
-    }
+        int k = abs(arr[0] - 1);
+        for(int i=1; i<n; i++){
+            k = gcd(k, abs(arr[i]-(i+1)));
+        }
 
+        cout<<k<<"\n";
+    }
+    
     return 0;
 }
