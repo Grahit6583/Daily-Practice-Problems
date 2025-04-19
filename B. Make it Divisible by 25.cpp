@@ -19,13 +19,11 @@ int main(){
         int op2 = 0;
         bool five = false;
         for(int i=l-1; i>=0; i--){
-            // cout<<s[i]<<" ";
             if(s[i] == '0'){
                 op1 += (l-i-1);
                 bool digit = false;
                 int j = i-1;
                 while(j >= 0){
-                    // cout<<s[j]<<" ";
                     if(s[j] == '0' || s[j] == '5'){
                         digit = true;
                         zero = true;
