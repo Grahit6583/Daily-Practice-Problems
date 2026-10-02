@@ -1,10 +1,7 @@
 {
     "C_Cpp.default.compilerPath": "C:/mingw64/mingw64/bin/g++.exe",
-    "files.associations": {
-        "iostream": "cpp",
-        "tuple": "cpp"
-    },
+    "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
-        "cpp": "g++ -std=c++23 \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\""
+        "cpp": "Set-Location -LiteralPath $dir; g++ -std=c++23 \"$fileName\" -o \"$fileNameWithoutExt.exe\"; if ($?) { & \".\\$fileNameWithoutExt.exe\" }"
     }
 }
